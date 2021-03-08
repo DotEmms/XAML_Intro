@@ -1,0 +1,34 @@
+﻿<Application x:Class="Calculator_WPF_XAML.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Calculator_WPF_XAML"
+             StartupUri="Calculator.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="operatorColour" Color="#FF367EB9"/>
+        <SolidColorBrush x:Key="specialOperatorColour" Color="#FFB2C2DC"/>
+        
+        <!--Implicit style => ALL buttons -->
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        
+        <!--Explicit style => selected buttons -->
+        <Style TargetType="Button" x:Key="operatorButtonStyle">
+            <Setter Property="Background" Value="{StaticResource operatorColour}"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="specialOperatorButtonStyle" BasedOn="{StaticResource operatorButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource specialOperatorColour}"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="60" />
+        </Style>
+        
+    </Application.Resources>
+</Application>

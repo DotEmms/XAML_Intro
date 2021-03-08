@@ -1,0 +1,40 @@
+﻿<Window x:Class="XAML_Intro.StackPanelIntro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:XAML_Intro"
+      mc:Ignorable="d" 
+      Title="StackPanelIntro" Height="600" Width="600">
+
+    <StackPanel>
+        <Button x:Name="BlueButton"
+                Content="Click Me" 
+                Height="80" 
+                Background="Blue" 
+                Foreground="White" 
+                FontSize="32">
+        </Button>
+        <Button x:Name="RedButton"
+                Content="Click Me" 
+                Height="80" 
+                Background="Red" 
+                Foreground="White" 
+                FontSize="32">
+        </Button>
+        <Button x:Name="GreenButton"
+                Content="Click Me" 
+                Height="80" 
+                Background="Green" 
+                Foreground="White" 
+                FontSize="32">
+        </Button>
+        <Button x:Name="YellowButton"
+                Content="Click Me" 
+                Height="80" 
+                Background="#FFCFCF25" 
+                Foreground="White" 
+                FontSize="32">
+        </Button>
+    </StackPanel>
+</Window>

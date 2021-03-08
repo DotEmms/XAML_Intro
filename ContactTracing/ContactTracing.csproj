@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="75100409-watercolor-pastel-background.jpg" />
+    <None Remove="AdobeStock_100000042-e1563305717660-686x371.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="75100409-watercolor-pastel-background.jpg" />
+    <Resource Include="AdobeStock_100000042-e1563305717660-686x371.jpeg" />
+  </ItemGroup>
+
+</Project>

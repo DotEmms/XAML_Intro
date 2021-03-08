@@ -1,0 +1,147 @@
+﻿<Window x:Class="ContactTracing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactTracing"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+    <Grid>
+        <Grid.Resources>
+            <local:InfectedPeople x:Key="myInfection"
+                SocialSecurityNumber = "12.34.56-321.98"
+                Name = "Doe Jane"
+                Street = "Imaginary Ave"
+                HouseNumber = "101"
+                PostalCode = "9000"
+                City = "Ghent"
+                PhoneNumber = "09/111.22.22"
+                Email = "doe.jane@anonimous.com" />
+        </Grid.Resources>
+        <Grid.Background>
+            <ImageBrush ImageSource="/75100409-watercolor-pastel-background.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <Grid.DataContext>
+            <Binding Source="{StaticResource myInfection}" />
+        </Grid.DataContext>
+
+        <StackPanel>
+            <Label Name="lblRijksrigisterNummer" Content="Rijksregisternummer:" />
+            <TextBox x:Name="rijksRegisterNummer"
+                     Style="{StaticResource regularSettings}"
+                     Text="{Binding SocialSecurityNumber}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Label Name="lblNaamVoornaam" Content="Naam en voornaam:" />
+            <TextBox x:Name="naamVoornaam"
+                     Style="{StaticResource irregularSettings}"
+                     Text="{Binding Name}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Label Name="lblGeboorteDatum" Content="Geboortedatum:" />
+            <DatePicker x:Name="geboorteDatum"
+                    Height="25"
+                    Width="110" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <Label Name="lblGeslacht" Content="Geslacht:" />
+            <StackPanel Width="300" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left">
+                <RadioButton Content="Man" />
+                <RadioButton Content="Vrouw" />
+                <RadioButton Content="X" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <Label Name="lblAdres" Content="Adres:" />
+            <Label Name="lblStraat" Content="Straat:" />
+            <TextBox x:Name="straat" InputScope="AddressStreet"
+                     Style="{StaticResource regularSettings}"
+                     Text="{Binding Street}" />
+            <Label Name="lblHuisnummer" Content="Huisnummer:" />
+            <TextBox x:Name="huisnummer" InputScope="Number"
+                     Style="{StaticResource irregularSettings}"
+                     Text="{Binding HouseNumber}" />
+            <Label Name="lblPostcode" Content="Postcode:" />
+            <TextBox x:Name="postcode" InputScope="PostalCode"
+                     Style="{StaticResource regularSettings}"
+                     Text="{Binding PostalCode}" />
+            <Label Name="lblGemeente" Content="Gemeente/stad:" />
+            <TextBox x:Name="gemeente" InputScope="AddressCity"
+                     Style="{StaticResource irregularSettings}"
+                     Text="{Binding City}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Label Name="lblTelefoon" Content="Telefoonnummer:" />
+            <TextBox x:Name="telefoonnummer"
+                     InputScope="TelephoneNumber"
+                     Style="{StaticResource irregularSettings}"
+                     Text="{Binding PhoneNumber}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Name="lblEmail" Content="E-mail-adres:" />
+            <TextBox x:Name="emailadres"
+                     InputScope="EmailUserName"
+                     Style="{StaticResource regularSettings}"
+                     Text="{Binding Email}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Name="lblAantal" Content="Aantal gezinsleden:" />
+            <ComboBox SelectedIndex="0">
+                <ComboBoxItem Content="0" />
+                <ComboBoxItem Content="1" />
+                <ComboBoxItem Content="2" />
+                <ComboBoxItem Content="3" />
+                <ComboBoxItem Content="4" />
+                <ComboBoxItem Content="5" />
+                <ComboBoxItem Content="6" />
+                <ComboBoxItem Content="7" />
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Label Name="lblTypeContact" Content="Type contact:" />
+            <ComboBox SelectedIndex="0">
+                <ComboBoxItem Content="--" />
+                <ComboBoxItem Content="Gezin" />
+                <ComboBoxItem Content="Familie" />
+                <ComboBoxItem Content="Werk" />
+                <ComboBoxItem Content="School" />
+                <ComboBoxItem Content="Prive" />
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Label Name="lblContact" Content="Gecontacteerd:" />
+            <CheckBox Content="Ja" />
+            <CheckBox Content="Nee" />
+        </StackPanel>
+
+        <Button x:Name="btnSend"
+                Grid.Column="1" Grid.Row="4"
+                Content="Verzenden"
+                Width="100"
+                Height="50"
+                Background="#FF78C1EC"
+                VerticalAlignment="Center"
+                FontFamily="Tekton Pro"
+                FontSize="20" />
+    </Grid>
+</Window>

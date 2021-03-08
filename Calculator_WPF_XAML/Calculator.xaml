@@ -1,0 +1,140 @@
+﻿<Window x:Class="Calculator_WPF_XAML.Calculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_WPF_XAML"
+        mc:Ignorable="d"
+        Title="Calculator" Height="525" Width="350">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Label x:Name="lblResult"
+               Content="0"
+               Grid.ColumnSpan="4"
+               VerticalAlignment="Bottom"
+               FlowDirection="RightToLeft"/>
+        
+        <!--First buttons row-->
+        <Button x:Name="btnReset"
+                Content="AC"
+                Grid.Row="1"
+                Style="{StaticResource specialOperatorButtonStyle}"
+                Click="btnReset_Click"/>
+        <Button x:Name="btnNegative"
+                Content="+/-"
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource specialOperatorButtonStyle}"/>
+        <Button x:Name="btnPercentage"
+                Content="%"
+                Grid.Row="1"
+                Grid.Column="2"
+                Style="{StaticResource specialOperatorButtonStyle}"/>
+        <Button x:Name="btnDivision"
+                Content="/"
+                Grid.Row="1"
+                Grid.Column="3"
+                Style="{StaticResource operatorButtonStyle}"
+                Click="OperationButton_Click"/>
+        
+        <!--Second buttons row-->
+        <Button x:Name="btnSeven"
+                Content="7"
+                Grid.Row="2"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnEight"
+                Content="8"
+                Grid.Row="2"
+                Grid.Column="1"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnNine"
+                Content="9"
+                Grid.Row="2"
+                Grid.Column="2"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnMultiplication"
+                Content="*"
+                Grid.Row="2"
+                Grid.Column="3"
+                Style="{StaticResource operatorButtonStyle}"
+                Click="OperationButton_Click"/>
+        
+        <!--Third buttons row-->
+        <Button x:Name="btnFour"
+                Content="4"
+                Grid.Row="3"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnFive"
+                Content="5"
+                Grid.Row="3"
+                Grid.Column="1"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnSix"
+                Content="6"
+                Grid.Row="3"
+                Grid.Column="2"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnMinus"
+                Content="-"
+                Grid.Row="3"
+                Grid.Column="3"
+                Style="{StaticResource operatorButtonStyle}"
+                Click="OperationButton_Click"/>
+        
+        <!--Fourth buttons row-->
+        <Button x:Name="btnOne"
+                Content="1"
+                Grid.Row="4"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnTwo"
+                Content="2"
+                Grid.Row="4"
+                Grid.Column="1"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnThree"
+                Content="3"
+                Grid.Row="4"
+                Grid.Column="2"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnPlus"
+                Content="+"
+                Grid.Row="4"
+                Grid.Column="3"
+                Style="{StaticResource operatorButtonStyle}"
+                Click="OperationButton_Click"/>
+        
+        <!--Fifth buttons row-->
+        <Button x:Name="btnZero"
+                Content="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Click="NumberButton_Click"/>
+        <Button x:Name="btnDot"
+                Content="."
+                Grid.Row="5"
+                Grid.Column="2"
+                Click="btnDot_Click"/>
+        <Button x:Name="btnEquals"
+                Content="="
+                Grid.Row="5"
+                Grid.Column="3" 
+                Style="{StaticResource operatorButtonStyle}"
+                Click="btnEquals_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,92 @@
+﻿<Window x:Class="MirrorExercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MirrorExercise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="myGrid">
+        <Grid.Resources>
+            <local:SmartMirror x:Key="MirrorData" />
+        </Grid.Resources>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/clearSky3.jpg" />
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="3*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock TextWrapping="wrap"
+                       FontSize="40">
+                <Run Text="{Binding Temperature, FallbackValue=26}"></Run>
+                <Run>°</Run>
+                </TextBlock>
+                <Image Source="/sunny.png" Width="55"/>
+            </StackPanel>
+            <Label Content="Clear sky" 
+                   FontSize="12"/>
+        </StackPanel>
+
+        <Label Grid.Row="1" 
+               Content="Max   Min     "
+               Padding="14"/>
+        <ListView x:Name="ForecastOverviewList"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Grid.Row="1"
+                  Background="Transparent"
+                  ItemTemplate="{StaticResource ForecastDataTemplate}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseLeftButtonUp" Handler="ListViewItem_MouseLeftButtonUp"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock Text="{Binding Today,StringFormat='dd/MM', FallbackValue=29/02}"
+                       FontSize="20"/>
+            <TextBlock Text="{Binding Today,StringFormat='hh:mm', FallbackValue=15:55}"
+                       FontSize="30"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Hello"
+                   FontSize="50"/>
+            <TextBlock Text="{Binding Name, FallbackValue='John'}"
+                       FontSize="30"
+                       Foreground="Gray"/>
+        </StackPanel>
+
+        <ListView x:Name="StocksOverviewList"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Grid.Row="2"
+                  Background="Transparent"
+                  ItemTemplate="{StaticResource StocksDataTemplate}">
+        </ListView>
+        
+        <ListView x:Name="NewsOverviewList"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Grid.Column="1" Grid.Row="2"
+                  Background="Transparent"
+                  ItemTemplate="{StaticResource NewsDataTemplate}">
+        </ListView>
+    </Grid>
+</Window>

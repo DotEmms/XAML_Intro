@@ -1,0 +1,21 @@
+﻿<Window x:Class="MirrorExercise.WeatherDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="WeatherDetailView" Height="450" Width="300">
+    <StackPanel>
+        <Image Source="/clipart2347262.png" Width="300" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Max, StringFormat=Max: {0}°C}" 
+                   Foreground="Black"
+                       Margin="30,0,30,0"/>
+            <TextBlock Text="{Binding Min, StringFormat=Min: {0}°C}" 
+                   Foreground="Black"
+                       Margin="30,0,30,0"/>
+        </StackPanel>
+        <Image Source="{Binding CloudsImage}" Width="60"/>
+        <TextBlock Text="{Binding Clouds}" Foreground="Black"/>
+    </StackPanel>
+</Window>

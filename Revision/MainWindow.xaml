@@ -1,0 +1,29 @@
+﻿<Window x:Class="Revision.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Revision"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="PieOverviewList"
+                  VerticalAlignment="Stretch"
+                  ItemTemplate="{StaticResource PieDataTemplate}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseLeftButtonUp" Handler="ListViewItem_MouseLeftButtonUp"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Button Content="Add pie"
+                Grid.Row="1"
+                Click="AddPie_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="clearSky.jpg" />
+    <None Remove="clearSky2.jpg" />
+    <None Remove="clearSky3.jpg" />
+    <None Remove="clipart2347262.png" />
+    <None Remove="itl.cat_nature-wallpaper-for-whatsapp_796229.png" />
+    <None Remove="sunny.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="clearSky.jpg" />
+    <Resource Include="clearSky2.jpg" />
+    <Resource Include="clearSky3.jpg" />
+    <Resource Include="clipart2347262.png" />
+    <Resource Include="itl.cat_nature-wallpaper-for-whatsapp_796229.png" />
+    <Resource Include="sunny.png" />
+  </ItemGroup>
+
+</Project>

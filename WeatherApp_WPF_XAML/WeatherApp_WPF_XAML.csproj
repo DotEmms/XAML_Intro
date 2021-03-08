@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="clipart2347262.png" />
+    <None Remove="clouded.png" />
+    <None Remove="clouded2.png" />
+    <None Remove="cloudy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="clipart2347262.png" />
+    <Resource Include="clouded.png" />
+    <Resource Include="clouded2.png" />
+    <Resource Include="cloudy.png" />
+  </ItemGroup>
+
+</Project>
